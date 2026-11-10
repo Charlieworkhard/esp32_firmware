@@ -11,6 +11,7 @@ ESP32-S3 语音助手固件（“小Y”）：麦克风采集 → WebSocket → 
 - MAX98357 I2S 功放
 - SSD1306 0.91" OLED（128x32，I2C）
 - BOOT 按键
+- 音量加/减按键
 
 ## 引脚
 
@@ -25,8 +26,15 @@ ESP32-S3 语音助手固件（“小Y”）：麦克风采集 → WebSocket → 
 | OLED SDA | 41 |
 | OLED SCL | 42 |
 | BOOT 键 | 0 |
+| 音量 + | 40 |
+| 音量 − | 39 |
 
 麦克风和功放各用一个 I2S 控制器（收发分离），引脚集中在 `main/config.h`。
+
+## 前置条件
+
+- ESP-IDF **v6.1**（`idf.py --version` 确认）
+- 目标芯片 `esp32s3`，16 MB Flash / 8 MB PSRAM
 
 ## 构建
 
@@ -35,6 +43,8 @@ idf.py set-target esp32s3
 idf.py build
 idf.py -p COMx flash monitor
 ```
+
+> `sdkconfig`、`build/`、`managed_components/` 都不在仓库里：首次构建会按 `sdkconfig.defaults` 自动生成配置，并把 `dependencies.lock` 里锁定的组件拉下来。改了 `sdkconfig.defaults` 后需要 `idf.py fullclean` 或删掉 `sdkconfig` 再构建。
 
 ## 首次使用
 
