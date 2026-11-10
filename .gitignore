@@ -1,0 +1,27 @@
+# ESP-IDF 构建产物
+build/
+managed_components/
+sdkconfig
+sdkconfig.old
+sdkconfig.ci
+compile_commands.json
+.flash_args
+*.bin
+*.elf
+*.map
+*.o
+*.a
+
+# 本地开发工具
+.vscode/
+.idea/
+.cache/
+.clangd
+.devcontainer/
+__pycache__/
+*.pyc
+.clang-format
+
+# 系统垃圾
+.DS_Store
+Thumbs.db

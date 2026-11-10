@@ -1,0 +1,9 @@
+dependencies:
+  idf:
+    version: '>=6.0.0'
+  espressif/cjson:
+    version: '^1.7.19'
+  espressif/esp_audio_codec:
+    version: '~2.5.0'
+  espressif/esp_websocket_client:
+    version: '^1.4.0'

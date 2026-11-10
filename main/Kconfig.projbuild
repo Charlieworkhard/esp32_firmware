@@ -1,0 +1,21 @@
+menu "Application Configuration"
+
+    config APP_ASSISTANT_NAME
+        string "Assistant display name"
+        default "小Y"
+        help
+            显示在屏幕和配网页面上的助手名称。
+
+    config APP_AP_SSID_PREFIX
+        string "Provisioning AP SSID prefix"
+        default "XiaoY"
+        help
+            首次配网时热点名称前缀，实际 SSID 为 <prefix>-XXXX（MAC 后两字节）。
+
+    config APP_CONFIG_URL
+        string "Server configuration URL"
+        default "http://192.168.31.62:8003/esp32Agent/local/"
+        help
+            设备启动时请求的配置地址，返回 JSON 中 websocket.url 字段作为连接地址。
+
+endmenu

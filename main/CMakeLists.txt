@@ -1,0 +1,37 @@
+idf_component_register(
+    SRCS
+        "main.cc"
+        "application.cc"
+        "audio/audio_io.cc"
+        "audio/audio_service.cc"
+        "audio/opus_codec.cc"
+        "audio/vad.cc"
+        "board/board.cc"
+        "config/config_client.cc"
+        "display/display.cc"
+        "display/font_zh16.c"
+        "protocol/protocol.cc"
+        "protocol/websocket_protocol.cc"
+        "system/settings.cc"
+        "wifi/wifi_config_portal.cc"
+        "wifi/wifi_manager.cc"
+    INCLUDE_DIRS
+        "."
+        "audio"
+        "board"
+        "config"
+        "display"
+        "protocol"
+        "system"
+        "wifi"
+    PRIV_REQUIRES
+        esp_driver_gpio
+        esp_driver_i2c
+        esp_driver_i2s
+        esp_event
+        esp_http_client
+        esp_http_server
+        esp_netif
+        esp_wifi
+        nvs_flash
+)
